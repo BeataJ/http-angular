@@ -34,7 +34,8 @@ export class PostsService {
         searchparams = searchparams.append('custom', 'key')
         return this.http.get<{ [key: string]: Post }>(environment.apiUrl, {
             headers: new HttpHeaders({'custom-headers': 'hello'}),
-            params: searchparams
+            params: searchparams,
+            responseType: 'json'
         })
             .pipe(map((resData) => {
                 const postsArray: Post[] = [];
