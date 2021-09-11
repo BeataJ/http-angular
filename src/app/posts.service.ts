@@ -14,7 +14,11 @@ export class PostsService {
 
     createAndStorePost(title: string, content: string) {
         const postData: Post = { title: title, content: content }
-        this.http.post<{ name: string }>(environment.apiUrl, postData)
+        this.http.post<{ name: string }>(environment.apiUrl, postData,
+            {
+                observe: 'response'
+            }
+            )
             .subscribe((resData) => {
                 console.log(resData)
             },
@@ -48,6 +52,8 @@ export class PostsService {
     }
 
     deletePosts(){
-        return this.http.delete(environment.apiUrl)
+        return this.http.delete(environment.apiUrl, {
+            observe: 'events'
+        })
     }
 }
