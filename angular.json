@@ -27,7 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "es5BrowserSupport": true,
+           
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,
