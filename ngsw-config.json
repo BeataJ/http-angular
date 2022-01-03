@@ -1,3 +1,5 @@
+
+
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
@@ -24,6 +26,20 @@
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "posta",
+      "urls": [
+       "environment.apiUrl"
+      ],
+      "cacheConfig": {
+        "maxSize": 5,
+        "maxAge": "2h",
+        "timeout": "10s",
+        "strategy": "freshness"
       }
     }
   ]
